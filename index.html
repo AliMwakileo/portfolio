@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This line makes the page fit phone screens. Don't delete it. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ali Mwakileo | Portfolio</title>
+  <meta name="description" content="Portfolio and learning log of Ali Mwakileo.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#home">Ali Mwakileo</a>
+      <nav aria-label="Main">
+        <ul>
+          <!-- href="#about" jumps to the element with id="about" further down -->
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#log">Learning log</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HOME ===== -->
+    <div class="wrap hero" id="home">
+      <div>
+        <h1>Hi, I'm Ali Mwakileo.</h1>
+        <p class="lead">Computer Science student at Multimedia University of Kenya. I'm learning software development through CS50 and personal projects, with a growing interest in backend systems, databases, and software architecture.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn secondary" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="learning" aria-label="Currently learning">
+        <h2>Currently learning</h2>
+        <ul>
+          <li>Harvard's CS50</li>
+          <li>Flask application development</li>
+          <li>SQL &amp; SQLite</li>
+          <li>CSS</li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <div class="wrap about">
+        <!-- Replace this placeholder with your photo: <img src="images/me.jpg" alt="Photo of Ali Mwakileo"> -->
+        <img alt="Photo of Ali Mwakileo" src="images/passport_photo.jpg">
+        <div>
+          <h2>About me</h2>
+          <p>I'm Ali Mwakileo, a Computer Science student at Multimedia University of Kenya. I'm currently working through Harvard's CS50 course alongside my university studies to strengthen my software development skills.</p>
+          <p>I enjoy understanding how software systems work behind the scenes, especially databases, backend development, and application architecture. Recently I've been building Flask applications, designing database schemas, and learning how authentication, sessions, and SQL fit together.</p>
+          <p>My goal is to become a skilled software engineer while building projects that solve real problems and eventually earning income from technology.</p>
+          <ul class="tags" aria-label="Skills">
+            <li>Python</li>
+            <li>Flask (Learning)</li>
+            <li>SQL &amp; SQLite</li>
+            <li>HTML</li>
+            <li>JavaScript Basics</li>
+            <li>CSS (Learning)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <p>Small projects count. Each card should say what you built, what you used, and link to the result.</p>
+        <div class="cards">
+
+          <!-- Copy this whole <article> block to add a project. -->
+          <article class="card">
+            <img alt="Screenshot of this portfolio site" src="images/portfolio.jpg">
+            <div class="body">
+              <h3>This portfolio site</h3>
+              <p>A personal website showcasing my projects, learning milestones, and progress as a Computer Science student. Built to document my journey as I develop my software engineering skills.</p>
+              <p class="tech">HTML, CSS</p>
+              <p><a href="#">Live site</a> &nbsp; <a href="#">Source code</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img alt="CS50 Finance screenshot" src="images/finance.png">
+            <div class="body">
+              <h3>CS50 Finance</h3>
+              <p>A stock trading web application built as part of Harvard's CS50. Features user authentication, stock quotes, buying and selling shares, transaction history, portfolio tracking, and cash management.</p>
+              <p class="tech">Python, Flask, SQL, HTML, CSS</p>
+              <p><a href="#">Live site</a> &nbsp; <a href="#">Source code</a></p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img alt="Placeholder for project three" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23d9dfe8'/%3E%3Crect x='110' y='60' width='100' height='80' rx='8' fill='%238a9bb0'/%3E%3C/svg%3E">
+            <div class="body">
+              <h3>Project three</h3>
+              <p>A project in development. Details about its goals, approach, and lessons learned will be shared here as it progresses.</p>
+              <p class="tech">Add the tech used</p>
+              <p><a href="#">Live site</a> &nbsp; <a href="#">Source code</a></p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEARNING LOG ===== -->
+    <section id="log">
+      <div class="wrap">
+        <h2>Learning log</h2>
+        <p>Short notes on what I figured out. Writing things down is one of the best ways to remember them.</p>
+        <ul class="log">
+          <li>
+            <time datetime="2026-10-04">Oct 4, 2026</time>
+            <p><strong>Started this site.</strong> Built the page structure with HTML first, then added styles.</p>
+          </li>
+          <li>
+            <time datetime="2026-11-02">Nov 2, 2026</time>
+            <p><strong>CS50 Finance debugging lesson.</strong> While building the portfolio page for CS50 Finance, I encountered both a runtime error and a logic error involving currency formatting. The experience reminded me that code can be incorrect even when it runs successfully.</p>
+          </li>
+          <li>
+            <time datetime="2026-11-05">Nov 5, 2026</time>
+            <p><strong>Completed CS50 Finance.</strong> Finished building the stock portfolio application as part of Harvard's CS50 course.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Want to talk about a project, give feedback, or just say hi? Email is the easiest way.</p>
+        <p>
+          <a href="mailto:chilleliali@gmail.com">Email me</a><br>
+          <a href="https://github.com/AliMwakileo">GitHub</a> &nbsp;
+          <a href="https://www.linkedin.com/in/ali-mwakileo-a41809433">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Ali Mwakileo. All rights reserved.</div>
+  </footer>
+</body>
+</html>

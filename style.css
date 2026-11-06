@@ -1,0 +1,106 @@
+/* ========== 1. DESIGN TOKENS ==========
+   Colors and sizes live here as "variables". Change a value once
+   and it updates everywhere. Try swapping --accent first. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #1b1f3b;
+  --muted: #5a6078;
+  --line: #d5dae3;
+  --accent: #0f6e8c;
+  --accent-ink: #ffffff;
+  --radius: 10px;
+  --space: 1.5rem;
+}
+/* Dark mode: the browser applies this if the visitor's device is set to dark. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12141f; --surface: #1b1f31; --ink: #e8eaf2;
+    --muted: #a2a8bf; --line: #2e3350; --accent: #5cc0de; --accent-ink: #0b1220;
+  }
+}
+
+/* ========== 2. BASE STYLES ========== */
+* { box-sizing: border-box; }           /* makes width/padding math predictable */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0 0 .6rem; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); }   /* clamp = min, preferred, max size */
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 1rem; max-width: 65ch; }        /* 65ch keeps lines easy to read */
+a { color: var(--accent); }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }  /* keyboard users */
+
+/* ========== 3. LAYOUT HELPERS ========== */
+.wrap { width: min(100% - 2rem, 62rem); margin-inline: auto; }  /* centered column */
+section { padding: 4rem 0; border-top: 1px solid var(--line); }
+
+/* ========== 4. HEADER & NAV (Flexbox) ==========
+   Flexbox lines items up in a row. justify-content spaces them out. */
+header { background: var(--surface); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 0; }
+.logo { font-family: Georgia, serif; font-weight: bold; font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--accent); text-decoration: underline; }
+.skip { position: absolute; left: -999px; }     /* "skip to content" link for screen readers */
+.skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: .5rem; }
+
+/* ========== 5. HERO (CSS Grid) ==========
+   Grid makes rows AND columns. Here: two columns on wide screens. */
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; padding: 4rem 0; }
+.hero .lead { font-size: 1.2rem; color: var(--muted); }
+.buttons { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn { display: inline-block; padding: .7rem 1.2rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; border: 2px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { filter: brightness(1.1); }
+.btn.secondary { color: var(--accent); }
+.btn.secondary:hover { background: var(--accent); color: var(--accent-ink); }
+
+.learning { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space); }
+.learning h2 { font-size: 1.2rem; }
+.learning ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+.learning li { margin-bottom: .4rem; }
+.done { text-decoration: line-through; }
+
+/* ========== 6. ABOUT ========== */
+.about { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: start; }
+.about img { border-radius: var(--radius); width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+.tags li { border: 1px solid var(--line); background: var(--surface); padding: .25rem .75rem; border-radius: 999px; font-size: .9rem; }
+
+/* ========== 7. PROJECT CARDS ==========
+   repeat(auto-fit, minmax(...)) = as many columns as fit, no media query needed. */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space); margin-top: 2rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.card img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; }  /* same shape for every image */
+.card .body { padding: 1.1rem; display: flex; flex-direction: column; flex: 1; }
+.card .tech { color: var(--muted); font-size: .9rem; margin-top: auto; }
+.card .body > p:last-child { margin: 0; }
+.card:hover { border-color: var(--accent); }
+
+/* ========== 8. LEARNING LOG ========== */
+.log { list-style: none; padding: 0; margin: 2rem 0 0; }
+.log li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.log time { color: var(--muted); }
+.log p { margin: 0; }
+
+/* ========== 9. FOOTER ========== */
+footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+/* ========== 10. RESPONSIVE ==========
+   On screens narrower than 700px, stack the two-column layouts. */
+@media (max-width: 700px) {
+  .hero, .about { grid-template-columns: 1fr; gap: 2rem; }
+  .about img { max-width: 200px; }
+  .log li { grid-template-columns: 1fr; gap: .2rem; }
+}
